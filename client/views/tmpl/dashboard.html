@@ -1,0 +1,358 @@
+<div class="page page-dashboard">
+
+  <div class="row">
+
+    <!-- /col -->
+  <div class="col-md-4">
+      <!-- tile -->
+      <section class="tile bg-greensea widget-appointments" fullscreen="isFullscreen05" ng-controller="AppointmentsWidgetCtrl">
+
+        <!-- tile header -->
+        <div class="tile-header dvd dvd-btm">
+          <h1 class="custom-font">Appointments</h1>
+          <ul class="controls">
+            <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
+
+              <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+              <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                <li>
+                  <a href tile-control-toggle>
+                    <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                    <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                  </a>
+                </li>
+                <li>
+                  <a href tile-control-refresh ng-click="ajaxFaker()">
+                    <fa name="refresh"></fa> Refresh
+                  </a>
+                </li>
+                <li>
+                  <a href tile-control-fullscreen ng-click="isFullscreen05 = !isFullscreen05">
+                    <fa name="expand"></fa> Fullscreen
+                  </a>
+                </li>
+                <li>
+                  <a href tile-control-lightbox>
+                    <fa name="magnet"></fa> Open in Lightbox
+                  </a>
+                </li>
+
+              </ul>
+
+            </li>
+            <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+          </ul>
+        </div>
+        <!-- /tile header -->
+
+        <!-- tile body -->
+        <div class="tile-body">
+          <!-- row -->
+          <div class="row">
+            <!-- col -->
+            <div class="col-md-6 text-center">
+
+              <h4 class="text-light">Mzansi Africa</h4>
+              <clock radius="60"></clock>
+              <span class="text-light">30&deg;C</span>
+
+            </div>
+            <!-- /col -->
+            <!-- col -->
+            <div class="col-md-6 b-l text-center">
+              <span class="day">{{date | date:'dd'}}</span><br/>
+              <span class="month">{{date | date:'MMMM'}}</span>
+            </div>
+            <!-- /col -->
+          </div>
+          <!-- /row -->
+        </div>
+        <!-- /tile body -->
+
+        <!-- tile footer -->
+        <div class="tile-footer dvd dvd-top mt-20">
+
+          <wrap-owlcarousel class="owl-carousel" data-options="{
+          autoPlay: 5000,
+          stopOnHover: true,
+          slideSpeed : 300,
+          paginationSpeed : 400,
+          navigation: true,
+          navigationText : ['<i class=\'fa fa-chevron-left\'></i>','<i class=\'fa fa-chevron-right\'></i>'],
+          singleItem : true}">
+
+            <div>
+              <p class="text-center text-strong"><i class="fa fa-clock-o"></i> 16:00, <small class="text-thin">Estimated time: 2 hours</small></p>
+              <p>
+                <h5 class="mt-10 mb-0 text-strong">Release Update</h5>
+                <small class="text-thin text-transparent-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</small>
+              </p>
+            </div>
+
+            <div>
+              <p class="text-center text-strong"><i class="fa fa-clock-o"></i> 19:00, <small class="text-thin">Estimated time: 5 hours</small></p>
+              <p>
+                <h5 class="mt-10 mb-0 text-strong">Make a Backup</h5>
+                <small class="text-thin text-transparent-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</small>
+              </p>
+            </div>
+
+            <div>
+              <p class="text-center text-strong"><i class="fa fa-clock-o"></i> 22:45, <small class="text-thin">Estimated time: 8 hours 45 minutes</small></p>
+              <p>
+                <h5 class="mt-10 mb-0 text-strong">Buy Tickets</h5>
+                <small class="text-thin text-transparent-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</small>
+              </p>
+            </div>
+
+          </wrap-owlcarousel>
+
+        </div>
+        <!-- /tile footer -->
+
+      </section>
+      <!-- /tile -->
+    </div>
+
+
+    <!-- col -->
+    <div class="col-md-4">
+
+      <!-- /tile -->
+
+      <!-- tile -->
+      <section class="tile widget-todo" fullscreen="isFullscreen04" ng-controller="TodoWidgetCtrl">
+
+        <!-- tile header -->
+        <div class="tile-header dvd dvd-btm">
+          <h1 class="custom-font"><strong>Todo </strong>List</h1>
+          <ul class="controls">
+            <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
+
+              <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+              <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                <li>
+                  <a href tile-control-toggle>
+                    <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                    <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                  </a>
+                </li>
+                <li>
+                  <a href tile-control-refresh ng-click="ajaxFaker()">
+                    <fa name="refresh"></fa> Refresh
+                  </a>
+                </li>
+                <li>
+                  <a href tile-control-fullscreen ng-click="isFullscreen04 = !isFullscreen04">
+                    <fa name="expand"></fa> Fullscreen
+                  </a>
+                </li>
+                <li>
+                  <a href tile-control-lightbox>
+                    <fa name="magnet"></fa> Open in Lightbox
+                  </a>
+                </li>
+
+              </ul>
+
+            </li>
+            <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+          </ul>
+        </div>
+        <!-- /tile header -->
+
+        <!-- tile body -->
+        <div class="tile-body lined-paper">
+
+          <form class="form-horizontal" role="form" ng-submit="addTodo()">
+            <label for="todo" class="text-strong mb-0">Add Todo: </label>
+            <div class="form-group mb-0">
+              <div class="col-sm-10">
+                <input type="text" class="form-control input-unstyled" id="todo" ng-model="todo" placeholder="type todo here..." required>
+              </div>
+              <div class="col-sm-2">
+                <button type="submit" class="btn btn-link"><i class="fa fa-chevron-right text-lg"></i></button>
+              </div>
+            </div>
+          </form>
+
+          <ul class="todo-list list-unstyled">
+            <li ng-repeat="todo in todos" ng-class="{completed: todo.completed, editing: todo == editedTodo}">
+
+              <div class="view">
+                <label class="checkbox checkbox-custom m-0 text-muted inline">
+                  <input type="checkbox" ng-checked="todo.completed" ng-model="todo.completed"><i></i>
+                </label>
+                <span ng-dblclick="editTodo(todo)">{{todo.text}}</span>
+                <a href="javascriph:;" class="text-danger remove-todo pull-right" ng-click="removeTodo(todo)" aria-label="Remove">
+                  <i class="fa fa-times"></i>
+                </a>
+              </div>
+
+              <form ng-submit="doneEditing(todo)">
+                <input class="form-control edit input-unstyled mb-0" ng-trim="false" ng-model="todo.text" ng-blur="doneEditing(todo)" todo-escape="revertEditing(todo)" todo-focus="todo == editedTodo">
+              </form>
+
+            </li>
+          </ul>
+
+        </div>
+        <!-- /tile body -->
+
+      </section>
+      <!-- /tile -->
+
+    </div>
+    <!-- /col -->
+
+
+    <!-- col -->
+    <div class="col-md-4">
+
+      <section class="tile bg-slategray widget-calendar" fullscreen="isFullscreen05">
+
+        <!-- tile header -->
+        <div class="tile-header dvd dvd-btm">
+          <h1 class="custom-font"><strong>Mini </strong>Calendar</h1>
+          <ul class="controls">
+            <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
+
+              <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+              <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                <li>
+                  <a href tile-control-toggle>
+                    <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                    <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                  </a>
+                </li>
+                <li>
+                  <a href tile-control-refresh ng-click="ajaxFaker()">
+                    <fa name="refresh"></fa> Refresh
+                  </a>
+                </li>
+                <li>
+                  <a href tile-control-fullscreen ng-click="isFullscreen05 = !isFullscreen05">
+                    <fa name="expand"></fa> Fullscreen
+                  </a>
+                </li>
+                <li>
+                  <a href tile-control-lightbox>
+                    <fa name="magnet"></fa> Open in Lightbox
+                  </a>
+                </li>
+
+              </ul>
+
+            </li>
+            <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+          </ul>
+        </div>
+        <!-- /tile header -->
+
+        <!-- tile body -->
+        <div class="tile-body p-0" ng-controller="CalendarWidgetCtrl">
+          <uib-datepicker ng-model="dt" show-weeks="false" class="datepicker"></uib-datepicker>
+        </div>
+        <!-- /tile body -->
+
+      </section>
+      <!-- /tile -->
+
+    </div>
+    <!-- /col -->
+
+
+  </div>
+  <!-- /row -->
+
+
+  <!-- row -->
+  <div class="row">
+    <!-- col -->
+    <div class="col-md-12">
+      <!-- tile -->
+      <section class="tile" fullscreen="isFullscreen06">
+
+        <!-- tile header -->
+        <div class="tile-header dvd dvd-btm">
+          <h1 class="custom-font"><strong>Project </strong>Progress</h1>
+          <ul class="controls">
+            <li ng-controller="DaterangepickerCtrl">
+              <a href="javascript:;" daterangepicker="rangeOptions" date-begin="startDate" date-end="endDate">
+                <span>{{startDate}} - {{endDate}}</span>&nbsp;&nbsp;<i class="fa fa-angle-down"></i>
+              </a>
+            </li>
+
+            <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
+
+              <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+              <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                <li>
+                  <a href tile-control-toggle>
+                    <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                    <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                  </a>
+                </li>
+                <li>
+                  <a href tile-control-refresh ng-click="ajaxFaker()">
+                    <fa name="refresh"></fa> Refresh
+                  </a>
+                </li>
+                <li>
+                  <a href tile-control-fullscreen ng-click="isFullscreen06 = !isFullscreen06">
+                    <fa name="expand"></fa> Fullscreen
+                  </a>
+                </li>
+                <li>
+                  <a href tile-control-lightbox>
+                    <fa name="magnet"></fa> Open in Lightbox
+                  </a>
+                </li>
+
+              </ul>
+
+            </li>
+            <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+          </ul>
+        </div>
+        <!-- /tile header -->
+
+        <!-- tile body -->
+        <div class="tile-body table-custom" ng-controller="ProjectProgressCtrl">
+
+          <div class="table-responsive">
+            <table datatable="ng" dt-options="dtOptions" dt-column-defs="dtColumnDefs" class="table table-custom">
+              <thead>
+              <tr>
+                <th>ID</th>
+                <th>Project</th>
+                <th>Priority</th>
+                <th style="width: 180px;">Status</th>
+                <th style="width: 60px;" class="text-right">Chart</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr ng-repeat="project in projects">
+                <td>{{ $index+1 }}</td>
+                <td>{{ project.title }}</td>
+                <td><small ng-class="{'text-danger': project.priority.value == 1, 'text-warning': project.priority.value == 2, 'text-success': project.priority.value == 3}">{{ project.priority.title }}</small></td>
+                <td><uib-progressbar class="progress-xxs not-rounded mb-0 inline-block" value="project.status" type="greensea" style="width: 150px; margin-right: 5px"></uib-progressbar><small>{{project.status}}%</small></td>
+                <td class="text-right"><span sparkline data="project.chart.data" options="{
+                  type: 'bar',
+                  barColor: project.chart.color,
+                  barWidth: '4px',
+                  height: '18px'
+                }"></span></td>
+              </tr>
+              </tbody>
+            </table>
+          </div> </div>
+      </section>
+    </div>
+  
+  </div>
+ 

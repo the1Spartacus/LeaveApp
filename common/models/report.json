@@ -1,0 +1,50 @@
+{
+  "name": "Report",
+  "plural": "Reports",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "year": {
+      "type": "date",
+      "required": true
+    },
+    "num_day_owing": {
+      "type": "number",
+      "required": true
+    },
+    "num_day_taking": {
+      "type": "number",
+      "required": true
+    },
+    "balance_owing": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "leave": {
+      "type": "belongsTo",
+      "model": "Leave",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}
