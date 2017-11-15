@@ -20,7 +20,8 @@ app
                       cell_number: $scope.user.cell_number,
                       email: $scope.user.email,
                       password: $scope.user.password
-                }).then(function(){
+                }).$promise
+                  .then(function(){
                 //location go to view company page
                   $state.go('core.login');
                  });

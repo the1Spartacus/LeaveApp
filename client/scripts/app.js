@@ -13,7 +13,7 @@
 
 var app = angular
   .module('minovateApp', [
-    'ngAnimate',
+    'ngAnimate',  
     'ngCookies',
     'ngResource',
     'ngSanitize',
@@ -21,7 +21,7 @@ var app = angular
     'ngMessages',
     'picardy.fontawesome',
     'ui.bootstrap',
-    'ui.router',
+    'ui.router',  
     'ui.utils',
     'angular-loading-bar',
     'angular-momentjs',
@@ -62,7 +62,8 @@ var app = angular
     'wu.masonry',
     'ipsum',
     'angular-intro',
-    'dragularModule'
+    'dragularModule',
+    'lbServices'
   ])
   .run(['$rootScope', '$state', '$stateParams', function($rootScope, $state, $stateParams) {
     $rootScope.$state = $state;

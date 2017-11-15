@@ -25,26 +25,7 @@
     }
   },
   "validations": [],
-  "relations": {
-    "leave": {
-      "type": "belongsTo",
-      "model": "Leave",
-      "foreignKey": ""
-    }
-  },
-  "acls": [
-    {
-      "accessType": "*",
-      "principalType": "ROLE",
-      "principalId": "$everyone",
-      "permission": "DENY"
-    },
-    {
-      "accessType": "READ",
-      "principalType": "ROLE",
-      "principalId": "$authenticated",
-      "permission": "ALLOW"
-    }
-  ],
+  "relations": {},
+  "acls": [],
   "methods": {}
 }

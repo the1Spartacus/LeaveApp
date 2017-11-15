@@ -13,6 +13,31 @@
       "./mixins"
     ]
   },
+  "User": {
+    "dataSource": "leavedb"
+  },
+  "AccessToken": {
+    "dataSource": "leavedb",
+    "public": true
+  },
+  "ACL": {
+    "dataSource": "leavedb",
+    "public": true
+  },
+  "RoleMapping": {
+    "dataSource": "leavedb",
+    "public": true,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "leavedb",
+    "public": true
+  },
+  "Message": {
+    "dataSource": null
+  },
   "Employee": {
     "dataSource": "leavedb",
     "public": true
