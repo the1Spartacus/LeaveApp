@@ -16,12 +16,17 @@ app
           email: $scope.user.email, 
           password: $scope.user.password
       }).$promise
-        .then(function() {
-            $state.go('app.dashboard');
-        })
+        .then(function(response) {
+             $rootScope.currentUser = {
+             id: response.userId,
+             tokenId: response.id,
+             email: $scope.user.email
+             };
+        }).then(function(){
+          $state.go('app.dashboard');
+      });
     };
       
-
   }]);
 
-          
+            

@@ -8,7 +8,7 @@
  * Controller of the minovateApp
  */
 app
-  .controller('MainCtrl', function ($scope, $http, $translate) {
+  .controller('MainCtrl', ['Employee','$state','$scope','$http','$translate','$rootScope',function (Employee, $state, $scope, $http, $translate,$rootScope) {
 
     $scope.main = {
       title: 'Spartacus',
@@ -38,4 +38,16 @@ app
       $scope.currentLanguage = langKey;
     };
     $scope.currentLanguage = $translate.proposedLanguage() || $translate.use();
-  });
+    
+           //logout a user
+          $scope.logout = function () {
+          return Employee
+           .logout()
+           .$promise
+           .then(function() {
+             $rootScope.currentUser = null;
+           }).then(function(){
+              $state.go('core.login');
+          });
+        };
+  }]);
