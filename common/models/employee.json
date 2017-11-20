@@ -29,7 +29,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "leaves": {
+      "type": "hasMany",
+      "model": "Leave",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

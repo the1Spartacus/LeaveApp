@@ -20,7 +20,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "leave": {
+      "type": "belongsTo",
+      "model": "Leave",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

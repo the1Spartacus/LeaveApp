@@ -278,7 +278,7 @@
 
         <!-- tile header -->
         <div class="tile-header dvd dvd-btm">
-          <h1 class="custom-font"><strong>Project </strong>Progress</h1>
+          <h1 class="custom-font"><strong>Leave </strong>Progress</h1>
           <ul class="controls">
             <li ng-controller="DaterangepickerCtrl">
               <a href="javascript:;" daterangepicker="rangeOptions" date-begin="startDate" date-end="endDate">
@@ -329,24 +329,23 @@
               <thead>
               <tr>
                 <th>ID</th>
-                <th>Project</th>
-                <th>Priority</th>
-                <th style="width: 180px;">Status</th>
-                <th style="width: 60px;" class="text-right">Chart</th>
+                <th>Leave</th>
+                <th>Days</th>
+                <th>From</th>  
+                <th >To</th>
+                <th >Applied Date</th>
+                <th>Status</th>
               </tr>
               </thead>
               <tbody>
-              <tr ng-repeat="project in projects">
+              <tr ng-repeat="lv in Leaves">
                 <td>{{ $index+1 }}</td>
-                <td>{{ project.title }}</td>
-                <td><small ng-class="{'text-danger': project.priority.value == 1, 'text-warning': project.priority.value == 2, 'text-success': project.priority.value == 3}">{{ project.priority.title }}</small></td>
-                <td><uib-progressbar class="progress-xxs not-rounded mb-0 inline-block" value="project.status" type="greensea" style="width: 150px; margin-right: 5px"></uib-progressbar><small>{{project.status}}%</small></td>
-                <td class="text-right"><span sparkline data="project.chart.data" options="{
-                  type: 'bar',
-                  barColor: project.chart.color,
-                  barWidth: '4px',
-                  height: '18px'
-                }"></span></td>
+                <td>{{ lv.leave_type }}</td>
+                <td>{{ lv.num_of_work_days }}</td>
+                <td>{{lv.start}}</td>
+                <td>{{lv.end}}</td>
+                <td>{{lv.applied_date}}</td>
+                <td>pending</td>  
               </tr>
               </tbody>
             </table>

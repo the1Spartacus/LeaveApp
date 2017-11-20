@@ -15,8 +15,12 @@
       "type": "number",
       "required": true
     },
-    "date": {
-      "type": "object",
+    "start": {
+      "type": "date",
+      "required": true
+    },
+    "end": {
+      "type": "date",
       "required": true
     },
     "applied_date": {
@@ -25,7 +29,23 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "employee": {
+      "type": "belongsTo",
+      "model": "Employee",
+      "foreignKey": ""
+    },
+    "results": {
+      "type": "hasOne",
+      "model": "Result",
+      "foreignKey": ""
+    },
+    "reports": {
+      "type": "hasOne",
+      "model": "Report",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

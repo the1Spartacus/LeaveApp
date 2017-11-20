@@ -4,7 +4,7 @@
     "connector": "memory"
   },
   "leavedb": {
-   "host": "ds151355.mlab.com",
+    "host": "ds151355.mlab.com",
     "port": 51355,
     "database": "leavedb",
     "password": "thulani",

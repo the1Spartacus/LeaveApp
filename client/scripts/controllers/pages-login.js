@@ -25,6 +25,17 @@ app
         }).then(function(){
           $state.go('app.dashboard');
       });
+    }
+    
+    function refresh(accessTokenId) {
+      return Employee
+        .getCurrent(function(userResource) {
+          $rootScope.currentUser = {
+            id: userResource.id,
+            tokenId: accessTokenId,
+            email: userResource.email
+          };
+        });
     };
       
   }]);

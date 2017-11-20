@@ -9,8 +9,8 @@
  */
 app
   .controller('DaterangepickerCtrl', function ($scope, $moment) {
-    $scope.startDate = $moment().subtract(1, 'days').format('MMMM D, YYYY');
-    $scope.endDate = $moment().add(31, 'days').format('MMMM D, YYYY');
+    $scope.startDate = $moment().subtract(1, 'days').format('YYYY-MM-DDTHH:MM:SSZ');
+    $scope.endDate = $moment().add(31, 'days').format('YYYY-MM-DDTHH:MM:SSZ');
     $scope.rangeOptions = {
       ranges: {
         Today: [$moment(), $moment()],
