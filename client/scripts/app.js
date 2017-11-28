@@ -121,6 +121,15 @@ var app = angular
         plugins: ['$ocLazyLoad', function($ocLazyLoad) {
           return $ocLazyLoad.load([
             'scripts/vendor/datatables/datatables.bootstrap.min.css',
+            'scripts/vendor/datatables/datatables.bootstrap.min.css',
+            'scripts/vendor/datatables/ColReorder/css/dataTables.colReorder.min.css',
+            'scripts/vendor/datatables/ColReorder/js/dataTables.colReorder.min.js',
+            'scripts/vendor/datatables/Responsive/dataTables.responsive.css',
+            'scripts/vendor/datatables/Responsive/dataTables.responsive.js',
+            'scripts/vendor/datatables/ColVis/css/dataTables.colVis.min.css',
+            'scripts/vendor/datatables/ColVis/js/dataTables.colVis.min.js',
+            'scripts/vendor/datatables/TableTools/css/dataTables.tableTools.css',
+            'scripts/vendor/datatables/TableTools/js/dataTables.tableTools.js',
             'scripts/vendor/datatables/datatables.bootstrap.min.css'
           ]);
         }]

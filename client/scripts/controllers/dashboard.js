@@ -26,12 +26,18 @@ app
     $scope.getUsers();
   })
 
-  .controller('ProjectProgressCtrl',['$scope','DTOptionsBuilder','DTColumnDefBuilder','Leave', function($scope, DTOptionsBuilder, DTColumnDefBuilder,Leave){
+  .controller('ProjectProgressCtrl',['$scope','DTOptionsBuilder','DTColumnDefBuilder','Leave','Result', function($scope, DTOptionsBuilder, DTColumnDefBuilder,Leave,Result){
     
         /* event source that contains custom events on the scope */
 
-    $scope.Leaves = Leave.find();  
-  
+    $scope.Leaves = Leave.find({
+         filter: {
+        include: [
+          'results'
+        ]
+      }
+    });  
+
   
     $scope.dtOptions = DTOptionsBuilder.newOptions().withBootstrap();
     $scope.dtColumnDefs = [
@@ -42,4 +48,3 @@ app
       DTColumnDefBuilder.newColumnDef(4).notSortable()
     ];
   }]);
-

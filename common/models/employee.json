@@ -34,8 +34,26 @@
       "type": "hasMany",
       "model": "Leave",
       "foreignKey": ""
+    },
+    "reports": {
+      "type": "hasOne",
+      "model": "Report",
+      "foreignKey": ""
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "ALLOW"
+    }
+  ],
   "methods": {}
 }

@@ -277,8 +277,73 @@
       <section class="tile" fullscreen="isFullscreen06">
 
         <!-- tile header -->
-        <div class="tile-header dvd dvd-btm">
+        <div class="tile-header dvd dvd-btm" ng-controller="SplashDemoCtrls">
           <h1 class="custom-font"><strong>Leave </strong>Progress</h1>
+                     
+            <script type="text/ng-template" id="mySplashContents.html">
+              <div class="modal-header">
+                <h3 class="modal-title custom-font">Apply Leave</h3>
+              </div>
+                <form name="form" class="form-validation mt-20"  novalidate>
+
+      <p class="help-block text-left">
+         I wish to apply for leave as follows:
+      </p>
+        
+        <div class="form-group">
+                    
+            <md-input-container>
+              <label >Leave</label>
+                      
+              <md-select ng-model="leave">
+                <md-option ng-repeat="leaves in arrayleaves" value="{{leaves}}">{{leaves}}</md-option>
+              </md-select>
+                        
+            </md-input-container>
+                      
+       </div>
+        
+    
+        <div class="form-group">
+                <label class="col-sm-3 control-label">days</label>
+            <div class="col-sm-9">
+                <input type="number" ng-model="days" class="form-control">
+            </div>
+        </div>
+        
+        <div class="form-group">
+                <label class="col-sm-3 control-label">from</label>
+            <div class="col-sm-9">
+                <input type="date" ng-model="fromDate" class="form-control">
+            </div>
+        </div>
+        
+        <div class="form-group">
+                <label class="col-sm-3 control-label">to</label>
+            <div class="col-sm-9">
+                <input type="date" ng-model="toDate" class="form-control">
+            </div>
+        </div>
+
+
+      <div class="form-group text-left">
+         <label class="checkbox checkbox-custom checkbox-custom-sm inline-block">
+
+        </label>
+      </div>
+    </form>
+
+        
+              <div class="modal-footer">
+                <button class="btn btn-default btn-border" ng-click="applyLeave()">Submit</button>
+                <button class="btn btn-default btn-border" ng-click="cancel()">Cancel</button>
+              </div>
+            </script>
+
+            
+                <button class="btn btn-primary mb-10" ng-click="openSplash($event)" data-options="splash-2 splash-ef-5">Apply for Leave</button>
+         
+          
           <ul class="controls">
             <li ng-controller="DaterangepickerCtrl">
               <a href="javascript:;" daterangepicker="rangeOptions" date-begin="startDate" date-end="endDate">
@@ -297,6 +362,7 @@
                     <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
                   </a>
                 </li>
+                  
                 <li>
                   <a href tile-control-refresh ng-click="ajaxFaker()">
                     <fa name="refresh"></fa> Refresh
@@ -320,11 +386,11 @@
           </ul>
         </div>
         <!-- /tile header -->
-
+ 
         <!-- tile body -->
         <div class="tile-body table-custom" ng-controller="ProjectProgressCtrl">
 
-          <div class="table-responsive">
+          <div class="table-responsive"> 
             <table datatable="ng" dt-options="dtOptions" dt-column-defs="dtColumnDefs" class="table table-custom">
               <thead>
               <tr>
@@ -332,9 +398,11 @@
                 <th>Leave</th>
                 <th>Days</th>
                 <th>From</th>  
-                <th >To</th>
-                <th >Applied Date</th>
-                <th>Status</th>
+                <th>To</th>
+                <th>Applied Date</th>
+                <th>Status</th>  
+                <th>Comment</th> 
+                <th>Actions</th>
               </tr>
               </thead>
               <tbody>
@@ -345,7 +413,78 @@
                 <td>{{lv.start}}</td>
                 <td>{{lv.end}}</td>
                 <td>{{lv.applied_date}}</td>
-                <td>pending</td>  
+                <th>{{lv.results.isApproved}}</th>
+                <th>{{lv.results.comments}}</th>  
+                <td ng-controller="SplashDemoCtrl">
+              
+
+            <script type="text/ng-template" id="mySplashContent.html">
+              <div class="modal-header">
+                <h3 class="modal-title custom-font">Edit Leave</h3>
+              </div>
+              <div class="modal-body">
+                  <form name="form" class="form-validation mt-20"  novalidate>
+
+      <p class="help-block text-left">
+         I wish to apply for leave as follows:
+      </p>
+        
+        <div class="form-group">
+                    
+            <md-input-container>
+              <label >Leave</label>
+                      
+              <md-select ng-model="leave">
+                <md-option ng-repeat="leaves in arrayleaves" value="{{leaves}}">{{leaves}}</md-option>
+              </md-select>
+                        
+            </md-input-container>
+                      
+       </div>
+        
+    
+        <div class="form-group">
+                <label class="col-sm-3 control-label">days</label>
+            <div class="col-sm-9">
+                <input type="number" ng-model="days" class="form-control">
+            </div>
+        </div>
+        
+        <div class="form-group">
+                <label class="col-sm-3 control-label">from</label>
+            <div class="col-sm-9">
+                <input type="date" ng-model="fromDate" class="form-control">
+            </div>
+        </div>
+        
+        <div class="form-group">
+                <label class="col-sm-3 control-label">to</label>
+            <div class="col-sm-9">
+                <input type="date" ng-model="toDate" class="form-control">
+            </div>
+        </div>
+
+
+      <div class="form-group text-left">
+         <label class="checkbox checkbox-custom checkbox-custom-sm inline-block">
+
+        </label>
+      </div>
+    </form>
+
+
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-default btn-border" ng-click="applyLeave()">Submit</button>
+                <button class="btn btn-default btn-border" ng-click="cancel()">Cancel</button>
+              </div>
+            </script>
+
+            
+                <button class="btn btn-primary mb-10 btn-xs" ng-click="openSplash($event)" data-options="splash-2 splash-ef-5">edit</button>
+                <button class="btn btn-primary mb-10 btn-xs" >delete</button>
+
+                </td>  
               </tr>
               </tbody>
             </table>
@@ -354,4 +493,79 @@
     </div>
   
   </div>
- 
+<div class="page page-datatables" ng-controller="TablesDatatablesCtrl">
+      <!-- page content -->
+  <div class="pagecontent">
+
+
+    <!-- row -->
+    <div class="row">
+      <!-- col -->
+      <div class="col-md-12">
+            <section class="tile" fullscreen="isFullscreen03">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Responsive </strong>Table</h1>
+            <ul class="controls">
+              <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
+
+                <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen03 = !isFullscreen03">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-lightbox>
+                      <fa name="magnet"></fa> Open in Lightbox
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body"  ng-controller="ResponsiveDatatableCtrl as showCase">
+
+            <table datatable="" dt-options="showCase.dtOptions" dt-columns="showCase.dtColumns" class="table table-custom"></table>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+          
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+          <!-- tile body -->
+         
+          <!-- /tile body -->
+
+      
+
+
